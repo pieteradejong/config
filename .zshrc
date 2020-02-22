@@ -11,7 +11,8 @@ export ZSH="/Users/pdejong/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -82,4 +83,9 @@ alias brewnew="brew update; brew upgrade; brew cleanup; brew doctor"
 alias diskspace='du -shc * | sort -rh'
 
 
+# PROMPT='[%T] %n ~ %d %%'
+# RPROMPT='[%T]'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
