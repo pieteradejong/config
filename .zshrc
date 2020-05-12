@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:Library/Python/3.7/bin:$PATH
 export EDITOR='subl -w'
 
 # Path to your oh-my-zsh installation.
@@ -81,6 +81,11 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -lah"
 alias brewnew="brew update; brew upgrade; brew cleanup; brew doctor"
 alias diskspace='du -shc * | sort -rh'
+alias dev='cd ~/dev'
+
+ytdl () {
+   youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $1
+}
 
 
 # PROMPT='[%T] %n ~ %d %%'
