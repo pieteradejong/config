@@ -120,3 +120,4 @@ WhatsApp.app
 Wireshark.app
 Wunderlist.app
 zoom.us.app
+iStat Menus.app
