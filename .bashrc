@@ -6,11 +6,6 @@ export EDITOR=/usr/bin/nano
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export TWITTER_CONSUMER_KEY="wGVs1rL50zfl8T0J7HriDg26e"
-export TWITTER_CONSUMER_SECRET="cId1RFKtSufBfocMid6mLAvnJyfE4Zcim2KJuJjcu9N4AgQZnI"
-export TWITTER_ACCESS_TOKEN="7659782-PyXT0BeLQcOiPccsDH25Gv1pAxLngQCO4PNQ4WfeEK"
-export TWITTER_ACCESS_SECRET="ol1426YklKz9sLQS3XY9UdUzBrl5D3WWIN6Asm32GHqdL"
-
 export ZSH_THEME="robbyrussell"
 
 alias dev='cd ~/dev'
