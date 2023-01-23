@@ -94,3 +94,5 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
+export PS1="\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\$ "
+
