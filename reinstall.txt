@@ -1,0 +1,123 @@
+$ brew leaves
+automake
+cabal-install
+cmake
+coreutils
+cunit
+ghc@8.8
+git
+graphviz
+htop
+imagemagick
+ipython
+jansson
+libuv
+ninja
+opencv
+opencv@3
+pandoc
+python-tk@3.9
+python@3.7
+redis
+rtmpdump
+sbt
+solidity
+sphinx-doc
+tomanthony/brews/itermocil
+tree
+wget
+yasm
+youtube-dl
+zsh
+
+
+Mac Apps
+
+Tor Browser.app
+Adobe Acrobat Reader DC.app
+Anki.app
+AnkiApp.app
+App Store.app
+AppCleaner.app
+Automator.app
+BlueJeans.app
+Books.app
+Brave Browser.app
+Calculator.app
+Calendar.app
+Chess.app
+choose color
+ColorPicker.app
+Contacts.app
+Contacts+.app
+Counter-Strike Global Offensive.app
+DB Browser for SQLite.app
+Dictionary.app
+Discord.app
+Docker.app
+FaceTime.app
+FileZilla.app
+Find My.app
+Firefox.app
+Flux.app
+Folx.app
+Font Book.app
+Ganache.app
+Google Chrome.app
+Google Docs.app
+Google Drive.app
+Google Sheets.app
+Google Slides.app
+Home.app
+Image Capture.app
+iMovie.app
+IntelliJ IDEA CE.app
+iTerm.app
+Keynote.app
+Launchpad.app
+Mail.app
+Maps.app
+Messages.app
+Mission Control.app
+Music.app
+News.app
+NordVPN IKE.app
+Notes.app
+Numbers.app
+Pages.app
+Photo Booth.app
+Photos.app
+Podcasts.app
+Postman.app
+Preview.app
+Proctortrack.app
+PyCharm CE.app
+Python 3.9
+QuickTime Player.app
+Reminders.app
+Safari.app
+Signal.app
+Siri.app
+Slack.app
+Spectacle.app
+Spotify.app
+Stickies.app
+Stocks.app
+Sublime Text.app
+System Preferences.app
+Telegram.app
+TextEdit.app
+thinkorswim
+Time Machine.app
+TV.app
+Untitled.scpt
+Utilities
+uTorrent.app
+VirtualBox.app
+VLC.app
+Voice Memos.app
+WhatsApp.app
+Wireshark.app
+Wunderlist.app
+zoom.us.app
+iStat Menus.app
