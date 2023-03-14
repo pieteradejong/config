@@ -15,6 +15,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
+# git config
+git config --global core.excludesfile ~/.gitignore
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -63,6 +66,18 @@ function node-project {
   npm init -y
   git add -A
   git commit -m "Initial commit"
+}
+
+function python-project {
+  git init
+}
+
+function flask-project {
+  git init
+}
+
+function django-project {
+  git init
 }
 
 
