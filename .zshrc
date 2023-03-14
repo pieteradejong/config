@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # git config
-git config --global core.excludesfile ~/.gitignore
+git config --global core.excludesfile ~/.gitignore_global
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -39,7 +39,7 @@ alias dev='cd ~/dev'
 alias proj='cd ~/dev/projects'
 alias kaggle='~/dev/kaggle'
 
-function ytdl () {
+function ytdl() {
    youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $1
 }
 
@@ -52,14 +52,20 @@ function ytdl () {
 #   fi
 # }
 
-function emailcopy () {
+function emailcopy() {
   EMAIL="pieter.a.dejong@gmail.com"
   echo -n $EMAIL | pbcopy
   echo  "Email address copied to clipboard."
   unset EMAIL
 }
 
-function node-project {
+function findgitdirs() {
+  echo "Finding all .git repos recursively:\n"
+  find . -name '.git' -type d -prune
+}
+
+
+function node-project() {
   git init
   npx license mit > LICENSE
   npx gitignore node
@@ -68,18 +74,17 @@ function node-project {
   git commit -m "Initial commit"
 }
 
-function python-project {
-  git init
+function python-project() {
+  # git init
 }
 
-function flask-project {
-  git init
+function flask-project() {
+  # git init
 }
 
-function django-project {
-  git init
+function django-project() {
+  # git init
 }
-
 
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
