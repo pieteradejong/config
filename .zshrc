@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# To configure p10k prompt: `p10k configure`
+
 export ZSH="/Users/pieterdejong/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
@@ -27,10 +29,42 @@ alias ls='ls -lah'
 alias ll='ls -lah'
 alias python='python3'
 alias diskspace='du -shc .??* * | sort -hr'
+alias zsrc='source ~/.zshrc'
 
-ytdl () {
+# directories
+alias dev='cd ~/dev'
+alias proj='cd ~/dev/projects'
+alias kaggle='~/dev/kaggle'
+
+function ytdl () {
    youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $1
 }
+
+# Work in progress
+# function save_as_pdfbook ($FILE) {
+#   $PDFBOOKDIR="$HOME/docs/pdfs_books"
+#   if [ -f "$FILE" ]; then
+#       mv $PWD/$FILE PDFBOOKDIR/$FILE
+#       echo "$FILE moved to $PDFBOOKDIR"
+#   fi
+# }
+
+function emailcopy () {
+  EMAIL="pieter.a.dejong@gmail.com"
+  echo -n $EMAIL | pbcopy
+  echo  "Email address copied to clipboard."
+  unset EMAIL
+}
+
+function node-project {
+  git init
+  npx license mit > LICENSE
+  npx gitignore node
+  npm init -y
+  git add -A
+  git commit -m "Initial commit"
+}
+
 
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
