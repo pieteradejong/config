@@ -28,8 +28,9 @@ git config --global core.excludesfile ~/.gitignore_global
 
 alias src=source
 alias brewnew='brew update && brew upgrade && brew cleanup && brew doctor'
-alias ls='ls -lah'
-alias ll='ls -lah'
+alias pip='pip3'
+alias pipupgrade="pip list --outdated | grep -Ev \"Package|^-\" | awk '{print $1}'| while IFS= read -r line ; do pip3 install \"$line\" -U ; done' "
+alias ls='ls -lah --color=auto'
 alias python='python3'
 alias diskspace='du -shc .??* * | sort -hr'
 alias zsrc='source ~/.zshrc'
@@ -38,6 +39,15 @@ alias zsrc='source ~/.zshrc'
 alias dev='cd ~/dev'
 alias proj='cd ~/dev/projects'
 alias kaggle='~/dev/kaggle'
+alias notes='subl ~/notes'
+
+# git
+# TODO: function with arg for commit message
+# git add -A ; git commit -m"${$1}" ; git push
+function gpall() {
+  echo $1
+  git add -A ; git commit -m "$1" ; git push
+}
 
 function ytdl() {
    youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $1
@@ -59,11 +69,10 @@ function emailcopy() {
   unset EMAIL
 }
 
-function findgitdirs() {
+function gitfinddirs() {
   echo "Finding all .git repos recursively:\n"
   find . -name '.git' -type d -prune
 }
-
 
 function node-project() {
   git init
