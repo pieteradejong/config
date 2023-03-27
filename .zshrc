@@ -7,13 +7,13 @@ fi
 
 # To configure p10k prompt: `p10k configure`
 
+
 export ZSH="/Users/pieterdejong/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # git config
 git config --global core.excludesfile ~/.gitignore_global
@@ -40,6 +40,11 @@ alias dev='cd ~/dev'
 alias proj='cd ~/dev/projects'
 alias kaggle='~/dev/kaggle'
 alias notes='subl ~/notes'
+
+# mongo
+alias mongod='brew services run mongodb-community'
+alias mongod-status='brew services list'
+alias mongod-stop='brew services stop mongodb-community'
 
 # git
 # TODO verify works
