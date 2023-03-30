@@ -10,3 +10,13 @@ This is not meant as a clonable DIRECTORY, but as a collection of stuff I use fo
 	* stack-specific scaffolding.
 
 * Well-established global `.gitignore`.
+
+## Chrome extensions
+
+* Wistia Video Downloader
+* Earth View from Google Earth
+* Go To Playing Tab
+* Google Docs Offline
+* LastPass Free Password Manager
+* Quick Search for Google Drive
+* Wistia Video Downloader
