@@ -7,13 +7,13 @@ fi
 
 # To configure p10k prompt: `p10k configure`
 
+
 export ZSH="/Users/pieterdejong/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # git config
 git config --global core.excludesfile ~/.gitignore_global
@@ -41,12 +41,21 @@ alias proj='cd ~/dev/projects'
 alias kaggle='~/dev/kaggle'
 alias notes='subl ~/notes'
 
+# mongo
+alias mongod='brew services run mongodb-community'
+alias mongod-status='brew services list'
+alias mongod-stop='brew services stop mongodb-community'
+
 # git
-# TODO: function with arg for commit message
-# git add -A ; git commit -m"${$1}" ; git push
-function gpall() {
-  echo $1
-  git add -A ; git commit -m "$1" ; git push
+# TODO verify works
+# function gpushall() {
+#   if [ -z "$1" ]; then COMMIT_MSG="default commit msg" else COMMIT_MSG="$1" fi
+#   git add -A ; git commit -m "$COMMIT_MSG" ; git push
+# }
+
+function gdirs() {
+  echo "Finding all .git repos recursively:\n"
+  find . -name '.git' -type d -prune
 }
 
 function ytdl() {
@@ -69,11 +78,6 @@ function emailcopy() {
   unset EMAIL
 }
 
-function gitfinddirs() {
-  echo "Finding all .git repos recursively:\n"
-  find . -name '.git' -type d -prune
-}
-
 function node-project() {
   git init
   npx license mit > LICENSE
@@ -81,10 +85,6 @@ function node-project() {
   npm init -y
   git add -A
   git commit -m "Initial commit"
-}
-
-function python-project() {
-  # git init
 }
 
 function flask-project() {
