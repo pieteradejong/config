@@ -3,16 +3,18 @@
 	email = pieter.a.dejong@gmail.com
 
 [core]
-	editor = 'subl -n -w'
-	excludesfile = /Users/pdejong/.gitignore_global
+	editor = 'subl --new-window --wait'
+	excludesfile = /Users/pieterdejong/.gitignore_global
 
 [alias]
-        st = status
-        ci = commit -v
-        co = checkout
-        br = branch
-        unstage = reset HEAD --
-        last = log -1 HEAD
+    st = status
+    c  = commit
+    p  = push
+    ci = commit -v
+    ll = log --oneline
+    co = checkout
+    br = branch
+    unstage = reset HEAD --
+    last = log -1 HEAD
 [web]
-        browser = google-chrome
-
+    browser = google-chrome
