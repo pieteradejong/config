@@ -1,20 +1,18 @@
 # My Software Development Process
 
-_Documenting my development process._
-
-## Project Usage/Audience
-
-## Version Management
-`git`
+Purpose: Documenting my development process.
+Audience: Myself. For my own future reference.
 
 ## Documentation
-* In code: utilize auto-documentation, especially for APIs.
-* Describe design choices including alternatives and reasoning.
-* In GitHub README, include green/red badges for "does it still work."
+* Utilize auto-documentation wherever possible, e.g. `FastAPI`.
+* `README` describes design choices. Includes colored badges for build status, tests passing etc.
 
-## Code
+## Coding style and practices
 * Always as strictly typed as possible, even in Python where type annotations are not enforced during compilation to bytecode. They are still useful for tools such as IDEs and linters, and for code readability.
 * Always as much pre-defined and pre-allocated as possible. For example, if we know a list/array will have `exactly N`, or `at most N` elements, this should be made clear at time of declararion or assignment.
+
+## Python local development workflow:
+Write code -> lint using Ruff -> Run all tests e.g. pytest -> 
 
 ## Testing
 
