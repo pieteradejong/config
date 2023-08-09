@@ -26,13 +26,9 @@ TODO: research integration of profiling tools into workflow.
 * Feature roadmap
 
 ### Useful emojis / graphics
-
-[x] Feature completed
-[-] Feature in progress
-[] Feature not started
-
-:white_check_mark: - "completed"
-
-:clock8: or :pencil: - "work in progress"
-
-&#9744; - "not yet started"
+- [x] Feature completed
+- [-] Feature in progress
+- [ ] Feature not started
+- :white_check_mark: - "completed"
+- :clock8: or :pencil: - "work in progress"
+- &#9744; - "not yet started"
