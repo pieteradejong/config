@@ -17,7 +17,22 @@ Write code -> lint using Ruff -> Run all tests e.g. pytest ->
 ## Python profiling: database, network, CPU
 TODO: research integration of profiling tools into workflow.
 
-## README snippets:
+## README personal template/guidelines
+* descriptive title
+* screenshot if possible, or a diagram of architecture / code flow
+* if applicable, a note about project status (alpha, beta, production ready, just a script, etc.)
+* tech stack with links
+  * relevant URLs if "based on" other projects
+* Feature roadmap
+
+### Useful emojis / graphics
+
+[x] Feature completed
+[-] Feature in progress
+[] Feature not started
+
 :white_check_mark: - "completed"
+
 :clock8: or :pencil: - "work in progress"
+
 &#9744; - "not yet started"
