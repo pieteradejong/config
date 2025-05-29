@@ -1,0 +1,218 @@
+# Cursor AI Rules for Development Configuration Repository
+# This file guides Cursor's AI assistant for managing dotfiles and dev environment configs
+
+## Project Context
+You are working on a development configuration repository that enables rapid setup of development environments. This is a dotfiles/config management system designed for personal productivity and public sharing.
+
+## Repository Purpose
+- **Personal**: Quickly set up development environment on new machines
+- **Sharing**: Allow others to adopt and adapt these configurations
+- **Security**: Keep sensitive data separate from public configurations
+
+## Configuration Management Principles
+
+### File Categories
+- **Public Configs**: Safe to commit and share (templates, public settings)
+- **Secret Configs**: Never commit (API keys, personal paths, work settings)
+- **Templates**: Example files ending in `.template` for easy setup
+
+### Security Model
+- Use **placeholder values** in public configs
+- Create **`.secret` files** for sensitive data
+- Add comprehensive **`.gitignore` patterns**
+- Provide **template files** for secret configurations
+
+## Development Environment Focus
+
+### Shell Configuration
+- **Zsh with Oh My Zsh** and Powerlevel10k theme
+- **Virtual environment** indicators in prompt
+- **Developer-friendly aliases** and functions
+- **Git integration** with branch/status display
+
+### Editor Configurations
+- **VS Code settings** and extensions
+- **Sublime Text** preferences
+- **Common editor** configurations that enhance productivity
+
+### Git Workflow
+- **Global gitignore** patterns
+- **Git aliases** for common operations
+- **Commit templates** and hooks
+- **Branch naming** conventions
+
+## File Structure Guidelines
+
+### Directory Organization
+```
+config/
+├── shell/           # Shell configurations (zsh, bash)
+├── git/            # Git settings and global configs
+├── editors/        # Editor configurations
+├── docs/           # Documentation and guides
+└── scripts/        # Setup and utility scripts
+```
+
+### Naming Conventions
+- **Public files**: `filename` (no extension indicators)
+- **Secret files**: `filename.secret` (never committed)
+- **Templates**: `filename.secret.template` (safe examples)
+- **Scripts**: `install.sh`, `setup.sh` (executable)
+
+## Code Style for Shell Scripts
+
+### Shell Scripting Standards
+- Use **bash for scripts** (better compatibility)
+- Include **error handling** with `set -e`
+- Provide **colored output** for user feedback
+- Add **backup functionality** before making changes
+- Use **absolute paths** where possible
+
+### Script Structure
+```bash
+#!/bin/bash
+set -e  # Exit on error
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Functions for consistent output
+print_status() { echo -e "${GREEN}✓${NC} $1"; }
+print_warning() { echo -e "${YELLOW}⚠${NC} $1"; }
+print_error() { echo -e "${RED}✗${NC} $1"; }
+```
+
+## Security Practices
+
+### Never Commit These Patterns
+```gitignore
+# Secret configuration files
+*.secret
+*.private
+*.confidential
+
+# Environment and credential files
+.env*
+!.env.template
+!.env.example
+
+# Keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Personal information
+*password*
+*token*
+*credential*
+```
+
+### Safe Configuration Patterns
+- **Environment variables**: `export VAR="${VAR:-}"`
+- **Conditional loading**: `[[ -f ~/.config.secret ]] && source ~/.config.secret`
+- **Template files**: Clear examples with placeholder values
+- **Documentation**: Explain what needs to be configured secretly
+
+## Documentation Standards
+
+### README Requirements
+- **Quick start** section (clone, install, configure)
+- **Prerequisites** (what needs to be installed first)
+- **File descriptions** (what each config file does)
+- **Customization guide** (how to adapt for personal use)
+- **Security warnings** (what files to never share)
+
+### Inline Documentation
+- **Comment shell scripts** thoroughly
+- **Explain complex aliases** and functions
+- **Document dependencies** and requirements
+- **Include usage examples** in comments
+
+## Installation and Setup
+
+### Installation Script Requirements
+- **Backup existing** configurations before replacing
+- **Create symbolic links** instead of copying files
+- **Validate prerequisites** (required software)
+- **Provide rollback** instructions
+- **Test configurations** after installation
+
+### Setup Workflow
+1. **Clone repository** to standard location
+2. **Run installation script** with proper permissions
+3. **Create private configs** from templates
+4. **Reload shell** or restart terminal
+5. **Verify installation** with test commands
+
+## Portability Considerations
+
+### Cross-Platform Support
+- **Detect operating system** in scripts
+- **Use portable commands** when possible
+- **Document platform-specific** requirements
+- **Provide alternatives** for different systems
+
+### Machine-Specific Configurations
+- **Hostname-based** conditional loading
+- **Environment detection** (work vs personal)
+- **Path adaptations** for different setups
+- **Tool availability** checks
+
+## Maintenance and Updates
+
+### Version Control Practices
+- **Meaningful commit messages** describing changes
+- **Small, focused commits** for easier tracking
+- **Tag releases** for major configuration updates
+- **Document breaking changes** in commit messages
+
+### Update Workflow
+- **Test changes** in isolated environment
+- **Update documentation** with configuration changes
+- **Provide migration** instructions for major updates
+- **Maintain backward** compatibility when possible
+
+## AI Assistant Guidelines
+
+### When Suggesting Configurations
+- **Prioritize security** - never suggest committing sensitive data
+- **Focus on portability** - work across different machines
+- **Emphasize documentation** - explain what configurations do
+- **Consider maintainability** - avoid overly complex setups
+
+### When Writing Scripts
+- **Include error handling** and user feedback
+- **Provide dry-run options** for testing
+- **Create backup procedures** before modifying files
+- **Test on clean environments** when possible
+
+### Code Review Focus
+- **Security vulnerabilities** (exposed secrets, permissions)
+- **Portability issues** (hardcoded paths, OS-specific commands)
+- **Documentation gaps** (missing setup instructions)
+- **Maintenance concerns** (overly complex configurations)
+
+## Repository Goals
+
+### Primary Objectives
+1. **Rapid environment setup** on new machines
+2. **Consistent development** experience across systems
+3. **Easy sharing** and adoption by others
+4. **Security-first** approach to sensitive data
+
+### Success Metrics
+- **Time to productive environment** < 15 minutes
+- **Zero sensitive data** in public repository
+- **Clear documentation** for all configurations
+- **Easy customization** for different needs
+
+## Remember
+This repository is about **developer productivity** and **environment consistency**. Every configuration should:
+- **Save time** in daily development work
+- **Be easily understood** by others
+- **Remain secure** when shared publicly
+- **Work reliably** across different machines
