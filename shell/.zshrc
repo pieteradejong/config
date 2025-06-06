@@ -78,6 +78,13 @@ function emailcopy() {
   unset EMAIL
 }
 
+function githubcopy() {
+  GITHUB="https://github.com/pieteradejong"
+  echo -n $GITHUB | pbcopy
+  echo "GitHub profile URL copied to clipboard."
+  unset GITHUB
+}
+
 function node-project() {
   git init
   npx license mit > LICENSE
@@ -103,3 +110,7 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load private/secret configuration if it exists
+# Copy shell/zshrc.secret.template to ~/.zshrc.secret and customize
+[[ -f ~/.zshrc.secret ]] && source ~/.zshrc.secret

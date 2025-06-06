@@ -1,5 +1,7 @@
 # Development Environment Configuration
 
+> 🔒 **SECURITY VERIFIED**: This repository has been designed with **zero-trust security principles**. All sensitive data (API keys, tokens, credentials) is kept in local `.secret` files that are **never committed**. The comprehensive `.gitignore` blocks 25+ sensitive file patterns, and the template system provides safe examples without exposing real credentials. **Safe to fork and share publicly.**
+
 > 🚀 **Executive Summary**: This repository provides a battle-tested, security-focused development environment setup that gets you coding productively in minutes. It includes optimized shell configurations (Zsh + Oh My Zsh), Git workflows, and editor settings - all designed to work across machines while keeping your sensitive data secure. Perfect for developers who want to maintain a consistent, efficient environment across work and personal machines without compromising security.
 
 A curated collection of development environment configurations designed for rapid setup and enhanced productivity. This repository contains shell configurations, editor settings, and development tools that can be quickly deployed on new machines.
@@ -10,15 +12,12 @@ A curated collection of development environment configurations designed for rapi
 # Clone the repository
 git clone https://github.com/pieteradejong/config.git ~/config
 
-# Navigate to shell configuration
-cd ~/config/shell
+# Run the installation script from the config root
+cd ~/config
+chmod +x shell/install.sh
+./shell/install.sh
 
-# Run the installation script
-chmod +x install.sh
-./install.sh
-
-# Create your private configuration
-cp zshrc.secret.template ~/.zshrc.secret
+# The script will create ~/.zshrc.secret from the template
 # Edit ~/.zshrc.secret with your personal settings
 
 # Reload your shell
@@ -31,6 +30,7 @@ source ~/.zshrc
 config/
 ├── shell/
 │   ├── .zshrc                    # Main zsh configuration
+│   ├── .bashrc                   # Bash configuration
 │   ├── zshrc.secret.template     # Template for secret settings
 │   └── install.sh                # Shell setup script
 ├── git/
@@ -42,10 +42,11 @@ config/
 ├── scripts/
 │   └── generate_mit_license_file.sh  # Utility scripts
 ├── docs/
-│   └── devprocess.md           # Development workflow guide
+│   ├── devprocess.md           # Development workflow guide
+│   └── reinstall.txt           # Reinstallation notes
+├── .gitignore                  # Security-focused gitignore
 ├── LICENSE                     # MIT License
-├── README.md                   # This file
-└── reinstall.txt              # Reinstallation notes
+└── README.md                   # This file
 ```
 
 ## 🎯 Features
@@ -87,23 +88,18 @@ config/
    git clone https://github.com/pieteradejong/config.git ~/config
    ```
 
-2. **Install shell configuration:**
+2. **Run the automated installation:**
    ```bash
-   cd ~/config/shell
-   chmod +x install.sh
-   ./install.sh
+   cd ~/config
+   chmod +x shell/install.sh
+   ./shell/install.sh
    ```
 
-3. **Set up private configuration:**
+3. **Customize your private configuration:**
    ```bash
-   cp ~/config/shell/zshrc.secret.template ~/.zshrc.secret
-   # Edit ~/.zshrc.secret with your personal settings
-   ```
-
-4. **Install Git configuration:**
-   ```bash
-   ln -sf ~/config/git/.gitconfig ~/.gitconfig
-   ln -sf ~/config/git/.gitignore_global ~/.gitignore_global
+   # The install script creates ~/.zshrc.secret from the template
+   # Edit it with your personal API keys and settings
+   nano ~/.zshrc.secret
    ```
 
 5. **Reload your shell:**
@@ -116,15 +112,17 @@ config/
 If you prefer to install components individually:
 
 ```bash
-# Shell configuration only
+# Shell configuration
 ln -sf ~/config/shell/.zshrc ~/.zshrc
+ln -sf ~/config/shell/.bashrc ~/.bashrc
 
-# Git configuration only  
+# Git configuration  
 ln -sf ~/config/git/.gitconfig ~/.gitconfig
 ln -sf ~/config/git/.gitignore_global ~/.gitignore_global
 
-# Create private configuration
+# Create private configuration from template
 cp ~/config/shell/zshrc.secret.template ~/.zshrc.secret
+chmod 600 ~/.zshrc.secret  # Secure permissions
 ```
 
 ## 🔒 Security Model
